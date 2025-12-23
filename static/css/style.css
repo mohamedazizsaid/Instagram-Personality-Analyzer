@@ -1,0 +1,139 @@
+/* static/css/style.css */
+:root {
+    --primary-color: #405de6;
+    --secondary-color: #5851db;
+    --accent-color: #fd1d1d;
+    --light-bg: #fafafa;
+    --dark-text: #262626;
+    --light-text: #8e8e8e;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.gradient-bg {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card {
+    border-radius: 15px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(253, 29, 29, 0.3);
+    color: white;
+}
+
+.loading {
+    display: none;
+}
+
+.loading.active {
+    display: block;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.trait-card {
+    background: white;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.progress {
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    background: linear-gradient(to right, #405de6, #833ab4);
+}
+
+.post-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.hashtag {
+    background: #e0f7fa;
+    color: #00796b;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-instagram {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group-text {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .form-control {
+        border-radius: 0;
+    }
+}

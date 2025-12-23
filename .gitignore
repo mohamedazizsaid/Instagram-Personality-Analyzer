@@ -1,0 +1,7 @@
+venv/
+downloads/
+cache/
+.env
+app/__pycache__
+app/static
+app/templates
