@@ -245,7 +245,7 @@ class InstagramScraper:
                 print(f"Login failed: {str(e)}")
                 return False
         
-    def get_profile_info(self, username: str) -> Dict:
+    async def get_profile_info(self, username: str) -> Dict:
             """
             Obtenir les informations de base d'un profil
             

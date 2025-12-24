@@ -18,7 +18,7 @@ app = FastAPI(title="Instagram Personality Analyzer API")
 # Configuration CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -56,7 +56,7 @@ async def analyze_profile(request: AnalysisRequest):
         
         if not scraped_data or len(scraped_data) == 0:
             raise HTTPException(status_code=404, detail="No data found for this profile")
-        
+        profile_info= await scraper.get_profile_info(username)
         # Analyser la personnalité
         print("Analyzing personality...")
         personality_results = await analyzer.analyze(scraped_data)
@@ -67,7 +67,8 @@ async def analyze_profile(request: AnalysisRequest):
             "personality_traits": personality_results["traits"],
             "posts_analyzed": len(scraped_data),
             "sample_data": scraped_data[:5],  # 5 premiers posts
-            "visualization": personality_results["visualization"]
+            "visualization": personality_results["visualization"],
+            "profile_info": profile_info
         }
         
         return response
