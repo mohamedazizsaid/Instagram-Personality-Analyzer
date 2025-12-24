@@ -13,13 +13,11 @@ Une application full-stack qui analyse la personnalité des utilisateurs Instagr
 ## 🏗️ Architecture
 
 ```
-instagram-personality-analyzer/
 instagram-personality-analyzer/                 # API FastAPI
   ├── app/
   │   ├── main.py         # Point d'entrée API
   │   ├── scraper.py      # Scraping Instagram
   │   ├── personality_analyzer.py  # Analyse IA
-  │   ├── models.py       # Modèles Pydantic
   │   └── utils.py        # Fonctions utilitaires
   └── requirements.txt
 
