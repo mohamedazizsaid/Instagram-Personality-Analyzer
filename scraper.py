@@ -44,7 +44,7 @@ class InstagramScraper:
         os.makedirs(self.download_dir, exist_ok=True)
         os.makedirs(self.cache_dir, exist_ok=True)
     
-    async def scrape_profile(self, username: str, max_posts: int = 5) -> List[Dict]:
+    async def scrape_profile(self, username: str, max_posts: int = 10) -> List[Dict]:
         """
         Scraper les posts d'un profil Instagram
         

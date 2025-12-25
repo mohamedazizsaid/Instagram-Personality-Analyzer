@@ -5,7 +5,7 @@ images et textes en utilisant XLM-RoBERTa et Vision Transformer.
 """
 
 __version__ = "1.0.0"
-__author__ = "Your Team"
+__author__ = "Said Mohamed Aziz"
 __description__ = "Instagram Personality Analysis using AI"
 
 from .main import app
